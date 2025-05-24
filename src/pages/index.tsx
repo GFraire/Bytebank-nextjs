@@ -1,7 +1,13 @@
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+
 import { BaseButton } from "@/components/button/style";
 import {
   AdvantageCard,
   AdvantageSection,
+  FooterContainer,
+  FooterContent,
   HeaderContainer,
   HeaderContent,
   HeroSection,
@@ -9,8 +15,6 @@ import {
   HomeContent,
   MainContainer,
 } from "@/styles/pages/home";
-import Head from "next/head";
-import Image from "next/image";
 
 export default function Home() {
   const advantageCards = [
@@ -43,6 +47,7 @@ export default function Home() {
       alt: "Notebook, tablet e celular",
     },
   ];
+
   return (
     <>
       <Head>
@@ -71,9 +76,11 @@ export default function Home() {
             </div>
 
             <div>
-              <BaseButton>Abrir minha conta</BaseButton>
+              <BaseButton disabled>Abrir minha conta</BaseButton>
 
-              <BaseButton outlined>Já tenho conta</BaseButton>
+              <Link href="/account">
+                <BaseButton outlined>Já tenho conta</BaseButton>
+              </Link>
             </div>
           </HeaderContent>
         </HeaderContainer>
@@ -90,6 +97,7 @@ export default function Home() {
                 src="/banner.png"
                 height={412}
                 width={660}
+                priority
                 alt="Desenho de uma pessoa segurando dinheiro"
               />
             </HeroSection>
@@ -118,6 +126,60 @@ export default function Home() {
             </AdvantageSection>
           </MainContainer>
         </HomeContent>
+
+        <FooterContainer>
+          <FooterContent>
+            <div className="infos">
+              <strong>Serviços</strong>
+
+              <span>Conta corrente</span>
+
+              <span>Conta PJ</span>
+
+              <span>Cartão de crédito</span>
+            </div>
+
+            <div className="infos">
+              <strong>Contato</strong>
+
+              <span>0800 004 250 08</span>
+
+              <span>meajuda@bytebank.com.br</span>
+
+              <span>ouvidoria@bytebank.com.br</span>
+            </div>
+
+            <div className="infos-icons">
+              <strong>Desenvolvido por Alura</strong>
+
+              <Image
+                alt="Texto escrito Bytebank"
+                height={32}
+                src="/logo-white.png"
+                priority
+                width={146}
+              />
+
+              <div>
+                <Image
+                  alt=""
+                  height={30}
+                  src="/icons/instagram.svg"
+                  width={30}
+                />
+
+                <Image
+                  alt=""
+                  height={30}
+                  src="/icons/whatsapp.svg"
+                  width={30}
+                />
+
+                <Image alt="" height={30} src="/icons/youtube.svg" width={30} />
+              </div>
+            </div>
+          </FooterContent>
+        </FooterContainer>
       </HomeContainer>
     </>
   );

@@ -18,7 +18,7 @@ export default function Document() {
           rel="stylesheet"
         />
 
-        <link rel="icon" href="/favicon.jpg" />
+        <link rel="icon" href="/favicon.png" />
 
         <style
           id="stitches"

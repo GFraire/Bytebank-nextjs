@@ -4,8 +4,9 @@ import { BaseButton } from "./style";
 interface ButtonProps {
   children: ReactNode;
   outlined?: boolean;
+  disabled?: boolean;
 }
 
-export function Button({ children, outlined }: ButtonProps) {
-  return <BaseButton outlined={outlined}>{children}</BaseButton>;
+export function Button({ children, outlined, disabled }: ButtonProps) {
+  return <BaseButton outlined={outlined} disabled={disabled}>{children}</BaseButton>;
 }

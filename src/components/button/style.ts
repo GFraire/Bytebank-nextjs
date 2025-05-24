@@ -19,5 +19,11 @@ export const BaseButton = styled("button", {
         color: "$green",
       },
     },
+    disabled: {
+      true: {
+        opacity: "0.6",
+        cursor: "not-allowed"
+      },
+    },
   },
 });

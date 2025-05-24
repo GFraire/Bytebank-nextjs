@@ -10,6 +10,7 @@ export const HomeContainer = styled("div", {
 export const HomeContent = styled("div", {
   backgroundImage: "linear-gradient(180deg, $primary 0%, $white 100%)",
   height: "100%",
+  paddingBottom: 150,
 });
 
 export const HeaderContainer = styled("header", {
@@ -98,14 +99,47 @@ export const AdvantageCard = styled("div", {
     color: "$green",
     fontSize: "$display-md",
     fontWeight: 700,
-    textAlign: "center"
+    textAlign: "center",
   },
 
   p: {
     fontSize: "$body",
     color: "$gray-600",
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
 });
 
-export const FooterContainer = styled("footer", {});
+export const FooterContainer = styled("footer", {
+  background: "black",
+});
+
+export const FooterContent = styled("div", {
+  display: "flex",
+  justifyContent: "space-between",
+
+  maxWidth: 1171,
+  marginRight: "auto",
+  marginLeft: "auto",
+
+  color: "$white",
+  paddingTop: 44,
+  paddingBottom: 44,
+
+  ".infos": {
+    display: "flex",
+    flexDirection: "column",
+    gap: 16,
+  },
+
+  ".infos-icons": {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: 24,
+
+    "div": {
+      display: "flex",
+      gap: 24
+    }
+  }
+});
