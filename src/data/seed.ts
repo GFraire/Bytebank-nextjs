@@ -6,42 +6,42 @@ const data = {
   users: [
     {
       id: 1,
-      name: "Alice",
-      balance: 1500
+      name: "Gabriel Freire de Araújo",
+      balance: 700
     },
     {
       id: 2,
-      name: "Bob",
-      balance: 3000
+      name: "Lana Carrero",
+      balance: 1800
     }
   ],
   transactions: [
     {
       id: 1,
       userId: 1,
-      type: "deposit",
+      type: "exchange",
       amount: 500,
       date: "2025-05-15T10:00:00Z"
     },
     {
       id: 2,
       userId: 1,
-      type: "transfer",
+      type: "ted",
       amount: 200,
       date: "2025-05-16T12:30:00Z"
     },
     {
       id: 3,
       userId: 2,
-      type: "deposit",
-      amount: 1000,
+      type: "loan",
+      amount: 2100,
       date: "2025-05-14T08:15:00Z"
     },
     {
       id: 4,
       userId: 2,
-      type: "transfer",
-      amount: 300,
+      type: "ted",
+      amount: -300,
       date: "2025-05-15T14:45:00Z"
     }
   ]

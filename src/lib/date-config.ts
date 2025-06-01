@@ -6,3 +6,9 @@ export function getCurrentDate(pattern: string) {
 
   return format(currentDate, pattern, { locale: ptBR });
 }
+
+export function getFormattedDate(dateP: string, pattern: string) {
+  const date = new Date(dateP);
+
+  return format(date, pattern, { locale: ptBR });
+}

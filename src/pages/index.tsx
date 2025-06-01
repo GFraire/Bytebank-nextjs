@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-import { BaseButton } from "@/components/button/style";
+import { BaseButton } from "@/components/ui/button/style";
 import {
   AdvantageCard,
   AdvantageSection,

@@ -1,27 +1,20 @@
 import { BalanceContainer, BalanceValue } from "./style";
 import { getCurrentDate } from "@/lib/date-config";
-import { IUser } from "@/pages/account";
 import { Eye, EyeClosed } from "lucide-react";
 import { theme } from "@/styles/stitches.config";
 import { useState } from "react";
+import { User } from "@/models/User";
 
 interface IBalanceProps {
-  user: IUser;
+  user: User;
 }
 
 export function Balance({ user }: IBalanceProps) {
   const [showBalance, setShowBalance] = useState(true);
 
-  const formattedValue = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  }).format(user.balance);
-
-  const balance = showBalance ? formattedValue : '*****'
-
+  const balance = showBalance ? user.currencyBRLValue : "*****";
   const date = getCurrentDate("EEEE, dd/MM/yyyy");
   const dateCapitalize = date.charAt(0).toUpperCase() + date.slice(1);
-  const firstName = user.name.split(" ")[0];
   const colors = theme.colors;
 
   function handleToggleShowBalance() {
@@ -31,7 +24,7 @@ export function Balance({ user }: IBalanceProps) {
   return (
     <BalanceContainer>
       <div className="hello">
-        <h4>Olá, {firstName}! :)</h4>
+        <h4>Olá, {user.firstName}! :)</h4>
 
         <span>{dateCapitalize}</span>
       </div>

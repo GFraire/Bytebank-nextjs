@@ -1,5 +1,4 @@
 import { styled } from "@stitches";
-import { cursorTo } from "readline";
 
 export const BalanceContainer = styled("div", {
   display: "flex",
@@ -8,7 +7,7 @@ export const BalanceContainer = styled("div", {
   padding: 16,
   borderRadius: 8,
   justifyContent: "space-between",
-  height: '100%',
+  height: "100%",
 
   ".hello": {
     display: "flex",
@@ -17,11 +16,11 @@ export const BalanceContainer = styled("div", {
 
     h4: {
       fontWeight: 600,
-      fontSize: 25,
+      fontSize: "$display-lg",
     },
 
     span: {
-      fontSize: 13,
+      fontSize: "$caption-sm",
     },
   },
 });
@@ -42,13 +41,13 @@ export const BalanceValue = styled("div", {
     borderBottom: "solid 2px $secondary",
 
     span: {
-      fontSize: 20,
+      fontSize: "$display-md",
       fontWeight: 600,
     },
 
     img: {
-      cursor: "pointer"
-    }
+      cursor: "pointer",
+    },
   },
 
   ".value": {
@@ -56,9 +55,9 @@ export const BalanceValue = styled("div", {
     flexDirection: "column",
     gap: 8,
 
-    "h3": {
-      fontSize: 31,
-      fontWeight: 400
-    }
-  }
+    h3: {
+      fontSize: "$heading-sm",
+      fontWeight: 400,
+    },
+  },
 });

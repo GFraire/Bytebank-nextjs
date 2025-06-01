@@ -22,7 +22,21 @@ export const BaseButton = styled("button", {
     disabled: {
       true: {
         opacity: "0.6",
-        cursor: "not-allowed"
+        cursor: "not-allowed",
+      },
+    },
+    primary: {
+      true: {
+        background: "$primary",
+      },
+    },
+    icon: {
+      true: {
+        display: "flex",
+        alignItems: "center",
+        background: "none",
+        height: "auto",
+        width: "auto",
       },
     },
   },

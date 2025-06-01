@@ -1,44 +1,51 @@
 {
   "users": [
     {
-      "id": 1,
       "name": "Gabriel Freire de Araújo",
-      "balance": 1500
+      "balance": 50,
+      "id": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Lana Carrero",
-      "balance": 3000
+      "balance": 1800
     }
   ],
   "transactions": [
     {
-      "id": 1,
-      "userId": 1,
-      "type": "deposit",
-      "amount": 500,
-      "date": "2025-05-15T10:00:00Z"
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "type": "transfer",
-      "amount": 200,
-      "date": "2025-05-16T12:30:00Z"
-    },
-    {
-      "id": 3,
+      "id": "3",
       "userId": 2,
-      "type": "deposit",
-      "amount": 1000,
+      "type": "loan",
+      "amount": 2100,
       "date": "2025-05-14T08:15:00Z"
     },
     {
-      "id": 4,
+      "id": "4",
       "userId": 2,
-      "type": "transfer",
-      "amount": 300,
+      "type": "ted",
+      "amount": -300,
       "date": "2025-05-15T14:45:00Z"
+    },
+    {
+      "id": "7779",
+      "amount": 500,
+      "date": "2025-06-01T17:09:11Z",
+      "type": "exchange",
+      "userId": "1"
+    },
+    {
+      "id": "227a",
+      "amount": -1000,
+      "date": "2025-06-01T17:19:05Z",
+      "type": "loan",
+      "userId": "1"
+    },
+    {
+      "id": "4040",
+      "amount": 550,
+      "date": "2025-06-01T17:19:57Z",
+      "type": "loan",
+      "userId": "1"
     }
   ]
 }
