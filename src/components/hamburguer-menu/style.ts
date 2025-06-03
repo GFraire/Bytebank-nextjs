@@ -5,6 +5,11 @@ export const MenuButton = styled("button", {
   border: "none",
   cursor: "pointer",
   zIndex: 1001,
+  display: "none",
+
+  "@mobile": {
+    display:"block"
+  }
 });
 
 export const Overlay = styled("div", {
