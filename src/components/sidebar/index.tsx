@@ -3,7 +3,7 @@ import { SideBarContainer } from "./style";
 
 interface SideBarProps {
   menuItemActive: MenuTypes;
-  onSetMenuItemActive: (item: MenuTypes) => void;
+  onSetMenuItemActive: (item: MenuTypes, isDisabled: boolean) => void;
 }
 
 interface MenuItem {
@@ -25,11 +25,13 @@ export function SideBar({ menuItemActive, onSetMenuItemActive }: SideBarProps) {
         const hasBorderBottom =
           index !== items.length - 1 ? "border-bottom" : "";
 
-        const isActive = item.type === menuItemActive ? "active" : "";
+        const isDisabled = index !== 0 ? true : false;
+        const isActive = item.type === menuItemActive ? true : false;
 
         const className = [
           hasBorderBottom ? "border-bottom" : null,
-          isActive ? "active" : null,
+          isActive ? 'active' : null,
+          isDisabled ? 'disabled' : null,
         ]
           .filter(Boolean)
           .join(" ");
@@ -38,7 +40,7 @@ export function SideBar({ menuItemActive, onSetMenuItemActive }: SideBarProps) {
           <span
             key={item.type}
             className={className}
-            onClick={() => onSetMenuItemActive(item.type)}
+            onClick={() => onSetMenuItemActive(item.type, isDisabled)}
           >
             {item.title}
           </span>

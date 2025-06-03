@@ -2,7 +2,7 @@
   "users": [
     {
       "name": "Gabriel Freire de Araújo",
-      "balance": 50,
+      "balance": 1150,
       "id": "1"
     },
     {
@@ -17,35 +17,35 @@
       "userId": 2,
       "type": "loan",
       "amount": 2100,
-      "date": "2025-05-14T08:15:00Z"
+      "date": "2025-05-14T08:15:00"
     },
     {
       "id": "4",
       "userId": 2,
       "type": "ted",
       "amount": -300,
-      "date": "2025-05-15T14:45:00Z"
+      "date": "2025-05-15T14:45:00"
     },
     {
-      "id": "7779",
-      "amount": 500,
-      "date": "2025-06-01T17:09:11Z",
+      "amount": -500,
+      "date": "2025-05-15T00:00:00",
+      "type": "loan",
+      "userId": "1",
+      "id": "8353"
+    },
+    {
+      "amount": 650,
+      "date": "2025-06-02T00:00:00",
+      "type": "ted",
+      "userId": "1",
+      "id": "ce1c"
+    },
+    {
+      "amount": 1000,
+      "date": "2025-05-28T00:00:00",
       "type": "exchange",
-      "userId": "1"
-    },
-    {
-      "id": "227a",
-      "amount": -1000,
-      "date": "2025-06-01T17:19:05Z",
-      "type": "loan",
-      "userId": "1"
-    },
-    {
-      "id": "4040",
-      "amount": 550,
-      "date": "2025-06-01T17:19:57Z",
-      "type": "loan",
-      "userId": "1"
+      "userId": "1",
+      "id": "170c"
     }
   ]
 }

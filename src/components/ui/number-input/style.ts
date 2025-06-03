@@ -13,4 +13,18 @@ export const StyledInput = styled("input", {
     outline: "none",
     borderColor: "$green",
   },
+
+  variants: {
+    plain: {
+      true: {
+        width: "100%",
+        padding: "unset",
+        border: "none",
+        background: "transparent",
+        color: "black",
+        textAlign: "start",
+        fontWeight: "bold"
+      },
+    },
+  },
 });

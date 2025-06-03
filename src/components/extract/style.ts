@@ -32,7 +32,10 @@ export const ExtractContainer = styled("div", {
       padding: 8,
       background: "$primary",
       borderRadius: 99,
-      cursor: "pointer",
+    },
+
+    ".active": {
+      opacity: "0.5",
     },
   },
 
@@ -56,6 +59,11 @@ export const ExtractItemContainer = styled("div", {
     color: "$green",
   },
 
+  ".label-type": {
+    color: "black",
+    fontWeight: 400,
+  },
+
   div: {
     display: "flex",
     justifyContent: "space-between",
@@ -73,9 +81,12 @@ export const ExtractItemContainer = styled("div", {
       fontWeight: "400",
     },
 
-    ".icon": {
-      cursor: "pointer"
-    }
+    ".input-date": {
+      fontSize: "$caption-sm",
+      color: "$gray-600",
+      fontWeight: "400",
+      height: 18
+    },
   },
 
   ".divider": {

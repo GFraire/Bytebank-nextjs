@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
 export function getCurrentDate(pattern: string) {
@@ -8,7 +8,7 @@ export function getCurrentDate(pattern: string) {
 }
 
 export function getFormattedDate(dateP: string, pattern: string) {
-  const date = new Date(dateP);
+  const date = parseISO(dateP);
 
   return format(date, pattern, { locale: ptBR });
 }

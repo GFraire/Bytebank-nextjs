@@ -20,7 +20,10 @@ export const HeaderContent = styled("div", {
   justifyContent: "end",
   gap: 32,
 
-  maxWidth: 1200,
+  paddingLeft: 16,
+  paddingRight: 16,
+
+  maxWidth: 1232,
   marginLeft: "auto",
   marginRight: "auto",
 
@@ -30,7 +33,9 @@ export const HeaderContent = styled("div", {
 export const Content = styled("div", {
   display: "flex",
   gap: 24,
-  maxWidth: 1200,
+  maxWidth: 1232,
+  paddingLeft: 16,
+  paddingRight: 16,
   marginLeft: "auto",
   marginRight: "auto",
   paddingBottom: 24,

@@ -41,7 +41,7 @@ export default async function handler(
   }
 }
 
-function validadeBodyParams(body: ITransactionParams) {
+export function validadeBodyParams(body: ITransactionParams) {
   const { amount, date, type, userId } = body;
 
   return (

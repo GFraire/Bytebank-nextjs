@@ -12,6 +12,7 @@ import {
 } from "@/models/Transaction";
 import { AxiosResponse } from "axios";
 import { getCurrentDate } from "@/lib/date-config";
+import { Utils } from "@/models/Utils";
 
 interface ITransactionProps {
   userId: string;
@@ -54,17 +55,12 @@ export function Transaction({ userId, setTransactions }: ITransactionProps) {
     { value: "loan", description: "Empréstimo e Financiamento" },
   ];
 
-  function brStringToNumber(value: string): number {
-    const normalized = value.replace(/\./g, "").replace(",", ".");
-    return parseFloat(normalized);
-  }
-
   async function handleCreateTransaction() {
     setIsLoading(true);
 
     const payload: ITransactionParams = {
-      amount: brStringToNumber(transactionValue),
-      date: getCurrentDate("yyyy-MM-dd'T'HH:mm:ss'Z'"),
+      amount: Utils.formatBrStringToNumber(transactionValue),
+      date: getCurrentDate("yyyy-MM-dd'T'HH:mm:ss"),
       type: transactionType,
       userId,
     };
@@ -79,7 +75,7 @@ export function Transaction({ userId, setTransactions }: ITransactionProps) {
       const transaction = new TransactionModel(response.data);
 
       setTransactions(transaction);
-      setTransactionValue("")
+      setTransactionValue("");
     } catch (err) {
       console.error(err);
     }
@@ -100,7 +96,10 @@ export function Transaction({ userId, setTransactions }: ITransactionProps) {
       <div className="value">
         <span>Valor</span>
 
-        <NumberInput value={transactionValue} setValue={onSetTransactionValue} />
+        <NumberInput
+          value={transactionValue}
+          setValue={onSetTransactionValue}
+        />
       </div>
 
       <Button

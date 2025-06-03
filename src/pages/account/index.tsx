@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CircleUser } from "lucide-react";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
@@ -22,6 +22,7 @@ import {
   Transaction as TransactionModel,
 } from "@/models/Transaction";
 import { IUser, User } from "@/models/User";
+import { ITransactionParams } from "../api/transactions/createTransaction";
 
 export type MenuTypes = "home" | "transfers" | "investments" | "services";
 
@@ -36,18 +37,24 @@ export default function Account({ user, transactions }: IAccountProps) {
   const [localTransactions, setLocalTransactions] = useState<
     TransactionModel[]
   >(() => transactions.map((t) => new TransactionModel(t)));
+  const hasMounted = useRef(false);
 
   const colors = theme.colors;
 
-  function onSetMenuItemActive(item: MenuTypes) {
-    setMenuItemActive(item);
+  useEffect(() => {
+    if (hasMounted.current) {
+      onSetCurrentUser(localTransactions);
+    } else {
+      hasMounted.current = true;
+    }
+  }, [localTransactions]);
+
+  function onSetMenuItemActive(item: MenuTypes, isDisabled: boolean) {
+    if (!isDisabled) setMenuItemActive(item);
   }
 
   function onSetTransaction(transaction: TransactionModel) {
-    const updatedTransactions = [...localTransactions, transaction];
-
-    setLocalTransactions(updatedTransactions);
-    onSetCurrentUser(updatedTransactions);
+    setLocalTransactions([...localTransactions, transaction]);
   }
 
   function onDeleteTransaction(transactionId: string) {
@@ -58,7 +65,32 @@ export default function Account({ user, transactions }: IAccountProps) {
     const updatedTransactions = transactionsFiltered;
 
     setLocalTransactions(updatedTransactions);
-    onSetCurrentUser(updatedTransactions);
+  }
+
+  function onUpdateTransaction(
+    updatedTransaction: ITransactionParams,
+    transactionId: string
+  ) {
+    setLocalTransactions((prevTransactions) => {
+      const newTransactions = prevTransactions
+        .map((transaction) => {
+          if (transaction.id === transactionId) {
+            return new TransactionModel({
+              id: transaction.id,
+              date: updatedTransaction.date,
+              type: updatedTransaction.type,
+              userId: updatedTransaction.userId,
+              amount: updatedTransaction.amount,
+            });
+          }
+          return transaction;
+        })
+        .sort((a, b) => {
+          return new Date(a.date).getTime() - new Date(b.date).getTime();
+        });
+
+      return newTransactions;
+    });
   }
 
   async function onSetCurrentUser(
@@ -111,7 +143,11 @@ export default function Account({ user, transactions }: IAccountProps) {
             />
           </Main>
 
-          <Extract transactions={localTransactions} deleteTransaction={onDeleteTransaction} />
+          <Extract
+            transactions={localTransactions}
+            deleteTransaction={onDeleteTransaction}
+            updateTransaction={onUpdateTransaction}
+          />
         </Content>
       </AccountContainer>
     </>
@@ -131,10 +167,14 @@ export const getServerSideProps: GetServerSideProps<
       }),
     ]);
 
+    const sortedTransactions = transactionsResponse.data.sort((a, b) => {
+      return new Date(a.date).getTime() - new Date(b.date).getTime();
+    });
+
     return {
       props: {
         user: userResponse.data,
-        transactions: transactionsResponse.data,
+        transactions: sortedTransactions,
       },
     };
   } catch (err) {

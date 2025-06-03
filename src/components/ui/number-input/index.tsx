@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { InputHTMLAttributes } from "react";
 import { StyledInput } from "./style";
 
-interface INumberInputProps {
-  value: string
+interface INumberInputProps extends InputHTMLAttributes<HTMLInputElement> {
+  value: string;
+  plain?: boolean
   setValue(value: string): void;
 }
 
-export function NumberInput({ value, setValue }: INumberInputProps) {
-
+export function NumberInput({ value, setValue,...props }: INumberInputProps) {
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const input = e.target.value;
 
@@ -21,8 +21,8 @@ export function NumberInput({ value, setValue }: INumberInputProps) {
 
     const raw = input.replace(/\D/g, "");
 
-    // Limita a 7 dígitos (5 inteiros + 2 decimais)
-    const limited = raw.slice(0, 7);
+    // Limita a 8 dígitos (5 inteiros + 2 decimais)
+    const limited = raw.slice(0, 8);
 
     if (limited === "") {
       setValue(isNegative ? "-" : "");
@@ -52,6 +52,7 @@ export function NumberInput({ value, setValue }: INumberInputProps) {
       value={value}
       onChange={handleChange}
       placeholder="00,00"
+      {...props}
     />
   );
 }

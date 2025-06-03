@@ -21,28 +21,28 @@ const data = {
       userId: 1,
       type: "exchange",
       amount: 500,
-      date: "2025-05-15T10:00:00Z"
+      date: "2025-05-15T10:00:00"
     },
     {
       id: 2,
       userId: 1,
       type: "ted",
       amount: 200,
-      date: "2025-05-16T12:30:00Z"
+      date: "2025-05-16T12:30:00"
     },
     {
       id: 3,
       userId: 2,
       type: "loan",
       amount: 2100,
-      date: "2025-05-14T08:15:00Z"
+      date: "2025-05-14T08:15:00"
     },
     {
       id: 4,
       userId: 2,
       type: "ted",
       amount: -300,
-      date: "2025-05-15T14:45:00Z"
+      date: "2025-05-15T14:45:00"
     }
   ]
 };

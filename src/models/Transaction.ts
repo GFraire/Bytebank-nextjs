@@ -5,17 +5,23 @@ export interface ITransaction {
   amount: number;
   date: string;
   type: TransactionType;
-  userId: number;
+  userId: string;
 }
 
 export type TransactionType = "exchange" | "ted" | "loan";
+
+export enum TransactionTypeLabels {
+  loan = "Empréstimo e financiamento",
+  exchange = "Câmbio de moeda",
+  ted = "DOC/TED",
+}
 
 export class Transaction {
   #id: string;
   #amount: number;
   #date: string;
   #type: "exchange" | "ted" | "loan";
-  #userId: number;
+  #userId: string;
 
   constructor(transaction: ITransaction) {
     this.#id = transaction.id;
@@ -38,7 +44,15 @@ export class Transaction {
   }
 
   get type() {
+    return this.#type;
+  }
+
+  get labelType() {
     return this.#amount >= 0 ? "Depósito" : "Retirada";
+  }
+
+  get userId() {
+    return this.#userId;
   }
 
   setAmount(value: number) {

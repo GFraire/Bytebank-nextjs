@@ -26,6 +26,11 @@ export const SideBarContainer = styled("aside", {
     "&.active": {
       color: "$green",
       fontWeight: "bold"
+    },
+
+    "&.disabled": {
+      opacity: 0.6,
+      cursor: "not-allowed"
     }
   },
 });
