@@ -15,6 +15,23 @@ export const HomeContent = styled("div", {
 
 export const HeaderContainer = styled("header", {
   background: "black",
+
+  ".logo": {
+    display: "block",
+
+    "@tablet": {
+      display: "none",
+    },
+  },
+
+  ".logo-mini-tablet": {
+    display: "none",
+    marginRight: 0,
+
+    "@tablet": {
+      display: "block",
+    },
+  },
 });
 
 export const HeaderContent = styled("div", {
@@ -31,10 +48,17 @@ export const HeaderContent = styled("div", {
 
     "&:first-child": {
       gap: 40,
+
+      "@tablet": {
+        gap: 8,
+      },
     },
 
     "&:last-child": {
       gap: 24,
+      "@tablet": {
+        gap: 12,
+      },
     },
   },
 
@@ -50,9 +74,11 @@ export const HeaderContent = styled("div", {
 });
 
 export const MainContainer = styled("main", {
-  maxWidth: 1171,
+  maxWidth: 1200,
   marginRight: "auto",
   marginLeft: "auto",
+  paddingRight: 24,
+  paddingLeft: 24,
 });
 
 export const HeroSection = styled("div", {
@@ -62,10 +88,23 @@ export const HeroSection = styled("div", {
   height: "100%",
   marginTop: 24,
 
+  "@tablet": {
+    flexDirection: "column",
+    gap: 16,
+    marginTop: 40,
+  },
+
   p: {
     maxWidth: 434,
     fontSize: "$display-xl",
     fontWeight: 600,
+  },
+
+  img: {
+    "@tablet": {
+      width: 520,
+      height: 390,
+    },
   },
 });
 
@@ -86,6 +125,10 @@ export const AdvantageSection = styled("div", {
     display: "grid",
     gridTemplateColumns: "repeat(4, 1fr)",
     gap: 24,
+
+    "@tablet": {
+      gridTemplateColumns: "1fr 1fr",
+    },
   },
 });
 
@@ -117,13 +160,15 @@ export const FooterContent = styled("div", {
   display: "flex",
   justifyContent: "space-between",
 
-  maxWidth: 1171,
+  maxWidth: 1200,
   marginRight: "auto",
   marginLeft: "auto",
 
   color: "$white",
   paddingTop: 44,
   paddingBottom: 44,
+  paddingRight: 24,
+  paddingLeft: 24,
 
   ".infos": {
     display: "flex",
@@ -137,9 +182,9 @@ export const FooterContent = styled("div", {
     alignItems: "center",
     gap: 24,
 
-    "div": {
+    div: {
       display: "flex",
-      gap: 24
-    }
-  }
+      gap: 24,
+    },
+  },
 });

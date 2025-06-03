@@ -64,10 +64,20 @@ export default function Home() {
             <div>
               <Image
                 alt="Texto escrito Bytebank"
+                className="logo"
                 height={32}
                 src="/logo.png"
                 priority
                 width={146}
+              />
+
+              <Image
+                alt=""
+                className="logo-mini-tablet"
+                height={26}
+                src="/logo-mini.png"
+                priority
+                width={26}
               />
 
               <span>Sobre</span>

@@ -27,7 +27,7 @@ export const { styled, globalCss, getCssText, theme } = createStitches({
     },
   },
   media: {
-    tablet: '(max-width: 1080px)',
-    mobile: '(max-width: 620px)',
-  }
+    tablet: "(max-width: 1080px)",
+    mobile: "(max-width: 620px)",
+  },
 });
