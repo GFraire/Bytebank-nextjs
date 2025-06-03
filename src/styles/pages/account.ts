@@ -28,6 +28,11 @@ export const HeaderContent = styled("div", {
   marginRight: "auto",
 
   color: "$white",
+
+  "@tablet": {
+    paddingLeft: 60,
+    paddingRight: 60,
+  },
 });
 
 export const Content = styled("div", {
@@ -41,6 +46,12 @@ export const Content = styled("div", {
   paddingBottom: 24,
   height: "100%",
   width: "100%",
+
+  "@tablet": {
+    flexDirection: "column",
+    paddingLeft: 60,
+    paddingRight: 60,
+  },
 });
 
 export const Main = styled("main", {
@@ -49,5 +60,3 @@ export const Main = styled("main", {
   gap: 24,
   width: "100%",
 });
-
-

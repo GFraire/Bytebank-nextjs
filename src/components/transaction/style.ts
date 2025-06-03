@@ -16,6 +16,11 @@ export const TransactionContainer = styled("div", {
 
   color: "black",
 
+  "@tablet": {
+    minHeight: 470,
+    backgroundImage: "url('/tablet-transactions-background.png')",
+  },
+
   h4: {
     fontWeight: 600,
     fontSize: "$display-lg",

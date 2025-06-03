@@ -13,6 +13,12 @@ export const SideBarContainer = styled("aside", {
 
   height: "100%",
 
+  "@tablet": {
+    background: "transparent",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+
   span: {
     paddingTop: 16,
     paddingBottom: 16,
@@ -25,12 +31,25 @@ export const SideBarContainer = styled("aside", {
 
     "&.active": {
       color: "$green",
-      fontWeight: "bold"
+      fontWeight: "bold",
     },
 
     "&.disabled": {
       opacity: 0.6,
-      cursor: "not-allowed"
-    }
+      cursor: "not-allowed",
+    },
+
+    "@tablet": {
+      flexGrow: 1,
+      "&.border-bottom": {
+        borderBottom: "none",
+      },
+
+      "&.active": {
+        color: "$green",
+        fontWeight: "bold",
+        borderBottom: "1px solid $green",
+      },
+    },
   },
 });

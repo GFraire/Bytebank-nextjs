@@ -9,6 +9,15 @@ export const BalanceContainer = styled("div", {
   justifyContent: "space-between",
   height: "100%",
 
+  "@tablet": {
+    minHeight: "400px",
+
+    backgroundImage: "url('/tablet-balance-background.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  },
+
   ".hello": {
     display: "flex",
     flexDirection: "column",
