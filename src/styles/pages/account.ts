@@ -33,6 +33,11 @@ export const HeaderContent = styled("div", {
     paddingLeft: 60,
     paddingRight: 60,
   },
+
+  "@mobile": {
+    paddingLeft: 16,
+    paddingRight: 16,
+  },
 });
 
 export const Content = styled("div", {
@@ -51,6 +56,11 @@ export const Content = styled("div", {
     flexDirection: "column",
     paddingLeft: 60,
     paddingRight: 60,
+  },
+
+  "@mobile": {
+    paddingLeft: 16,
+    paddingRight: 16,
   },
 });
 

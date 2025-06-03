@@ -18,6 +18,21 @@ export const BalanceContainer = styled("div", {
     backgroundRepeat: "no-repeat",
   },
 
+  "@mobile": {
+    minHeight: "500px",
+    backgroundImage: "url('/mobile-balance-background.png')",
+    backgroundSize: "contain",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+
+    flexDirection: "column",
+    alignItems: "center",
+    paddingTop: 40,
+
+    gap: 40,
+    justifyContent: "normal",
+  },
+
   ".hello": {
     display: "flex",
     flexDirection: "column",
@@ -41,6 +56,10 @@ export const BalanceValue = styled("div", {
   marginRight: 100,
   gap: 16,
   minWidth: 180,
+
+  "@mobile": {
+    margin: 0,
+  },
 
   ".action": {
     display: "flex",

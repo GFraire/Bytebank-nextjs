@@ -9,6 +9,10 @@ export const StyledInput = styled("input", {
   fontSize: "$body",
   textAlign: "center",
 
+  "@mobile": {
+    width: "50%",
+  },
+
   "&:focus": {
     outline: "none",
     borderColor: "$green",

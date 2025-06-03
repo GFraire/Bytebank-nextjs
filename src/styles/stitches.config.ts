@@ -10,6 +10,7 @@ export const { styled, globalCss, getCssText, theme } = createStitches({
       green: "#47A138",
       "green-light": "#E4EDE3",
       white: "#F5F5F5",
+      "gray-300": "#CBCBCB",
       "gray-500": "#444444",
       "gray-600": "#8B8B8B",
       "gray-700": "#767676",
@@ -27,5 +28,6 @@ export const { styled, globalCss, getCssText, theme } = createStitches({
   },
   media: {
     tablet: '(max-width: 1080px)',
+    mobile: '(max-width: 620px)',
   }
 });

@@ -2,7 +2,7 @@
   "users": [
     {
       "name": "Gabriel Freire de Araújo",
-      "balance": 1150,
+      "balance": 1431.23,
       "id": "1"
     },
     {
@@ -41,11 +41,18 @@
       "id": "ce1c"
     },
     {
-      "amount": 1000,
-      "date": "2025-05-28T00:00:00",
+      "id": "01e4",
+      "amount": 1231.23,
+      "date": "2025-06-02T22:17:26",
       "type": "exchange",
+      "userId": "1"
+    },
+    {
+      "amount": 50,
+      "date": "2025-05-28T00:00:00",
+      "type": "ted",
       "userId": "1",
-      "id": "170c"
+      "id": "6316"
     }
   ]
 }

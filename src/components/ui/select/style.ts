@@ -3,6 +3,10 @@ import { styled } from "@/styles/stitches.config";
 export const SelectWrapper = styled("div", {
   position: "relative",
   width: "355px",
+
+  "@mobile": {
+    width: "100%"
+  }
 });
 
 export const StyledSelect = styled("select", {
@@ -13,6 +17,8 @@ export const StyledSelect = styled("select", {
   appearance: "none",
   color: "$gray-500",
   fontSize: "$body",
+
+  
 
   "&:focus": {
     outline: "none",

@@ -19,6 +19,10 @@ export const SideBarContainer = styled("aside", {
     justifyContent: "space-between",
   },
 
+  "@mobile": {
+    display: "none"
+  },
+
   span: {
     paddingTop: 16,
     paddingBottom: 16,

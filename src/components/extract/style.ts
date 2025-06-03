@@ -1,4 +1,4 @@
-import { styled } from "@stitches/react";
+import { styled } from "@stitches";
 
 export const ExtractContainer = styled("div", {
   background: "$white",
@@ -45,6 +45,10 @@ export const ExtractContainer = styled("div", {
     flexDirection: "column",
     gap: 24,
     height: "650px",
+
+    "@mobile": {
+      height: "550px",
+    }
   },
 });
 
