@@ -25,4 +25,7 @@ export const { styled, globalCss, getCssText, theme } = createStitches({
       "caption-sm ": "0.8125rem", // 13px
     },
   },
+  media: {
+    tablet: '(max-width: 1080px)',
+  }
 });
