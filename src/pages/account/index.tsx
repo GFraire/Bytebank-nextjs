@@ -23,6 +23,7 @@ import {
 } from "@/models/Transaction";
 import { IUser, User } from "@/models/User";
 import { ITransactionParams } from "../api/transactions/createTransaction";
+import { HamburgerMenu } from "@/components/hamburguer-menu";
 
 export type MenuTypes = "home" | "transfers" | "investments" | "services";
 
@@ -122,7 +123,9 @@ export default function Account({ user, transactions }: IAccountProps) {
       <AccountContainer>
         <HeaderContainer>
           <HeaderContent>
-            {currentUser.name}
+            <HamburgerMenu />
+
+            <span>{currentUser.name}</span>
 
             <CircleUser height={40} width={40} color={colors.secondary.value} />
           </HeaderContent>

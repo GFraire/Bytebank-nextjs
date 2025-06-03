@@ -1,58 +1,44 @@
 {
   "users": [
     {
+      "id": 1,
       "name": "Gabriel Freire de Araújo",
-      "balance": 1431.23,
-      "id": "1"
+      "balance": 700
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Lana Carrero",
       "balance": 1800
     }
   ],
   "transactions": [
     {
-      "id": "3",
+      "id": 1,
+      "userId": 1,
+      "type": "exchange",
+      "amount": 500,
+      "date": "2025-05-15T10:00:00"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "type": "ted",
+      "amount": 200,
+      "date": "2025-05-16T12:30:00"
+    },
+    {
+      "id": 3,
       "userId": 2,
       "type": "loan",
       "amount": 2100,
       "date": "2025-05-14T08:15:00"
     },
     {
-      "id": "4",
+      "id": 4,
       "userId": 2,
       "type": "ted",
       "amount": -300,
       "date": "2025-05-15T14:45:00"
-    },
-    {
-      "amount": -500,
-      "date": "2025-05-15T00:00:00",
-      "type": "loan",
-      "userId": "1",
-      "id": "8353"
-    },
-    {
-      "amount": 650,
-      "date": "2025-06-02T00:00:00",
-      "type": "ted",
-      "userId": "1",
-      "id": "ce1c"
-    },
-    {
-      "id": "01e4",
-      "amount": 1231.23,
-      "date": "2025-06-02T22:17:26",
-      "type": "exchange",
-      "userId": "1"
-    },
-    {
-      "amount": 50,
-      "date": "2025-05-28T00:00:00",
-      "type": "ted",
-      "userId": "1",
-      "id": "6316"
     }
   ]
 }

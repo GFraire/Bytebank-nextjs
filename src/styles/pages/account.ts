@@ -37,6 +37,11 @@ export const HeaderContent = styled("div", {
   "@mobile": {
     paddingLeft: 16,
     paddingRight: 16,
+    justifyContent: "space-between",
+
+    span: {
+      display: "none"
+    }
   },
 });
 
